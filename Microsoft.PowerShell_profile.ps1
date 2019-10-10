@@ -1,3 +1,6 @@
+# Location is $PSHOME\Microsoft.PowerShell_profile.ps1
+
+# Directory Aliases
 function cd_repos { cd C:\Users\kev10076\Repos }
 Set-Alias -Name cdre -Value cd_repos  
 
@@ -7,9 +10,14 @@ Set-Alias -Name cdpy -Value cd_qapyunit
 function git_status { git status }
 Set-Alias -Name gst -Value git_status
 
+# Git Aliases
 function git_checkout([string]$branchname) 
 { git checkout $branchname }
 Set-Alias -Name gch -Value git_checkout
+
+function git_merge([string]$branchname) 
+{ git merge $branchname }
+Set-Alias -Name gme -Value git_merge
 
 function git_branchv { git branch -v }
 Set-Alias -Name gbv -Value git_branchv
