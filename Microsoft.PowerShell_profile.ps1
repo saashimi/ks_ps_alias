@@ -36,3 +36,7 @@ Set-Alias -Name gchb -Value git_checkoutb
 function git_add-u_comm([string]$message) 
 { git add -u; git commit -m $message }
 Set-Alias -Name gaducom -Value git_add-u_comm
+
+function git_merge-dev() 
+{ git checkout master; git merge dev; git push; git checkout dev }
+Set-Alias -Name gmedev -Value git_merge-dev
