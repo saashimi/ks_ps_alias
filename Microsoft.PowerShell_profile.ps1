@@ -1,5 +1,6 @@
 # Location is $PSHOME\Microsoft.PowerShell_profile.ps1
 
+
 # Directory Aliases
 function cd_repos { cd C:\Users\kev10076\Repos }
 Set-Alias -Name cdre -Value cd_repos  
@@ -7,10 +8,14 @@ Set-Alias -Name cdre -Value cd_repos
 function cd_qapyunit { cd C:\qatest\pyunit }
 Set-Alias -Name cdpy -Value cd_qapyunit
 
+function cd_source { cd C:\Users\kev10076\source\repos }
+Set-Alias -Name cdsrc -Value cd_source
+
+
+# Git Aliases
 function git_status { git status }
 Set-Alias -Name gst -Value git_status
 
-# Git Aliases
 function git_checkout([string]$branchname) 
 { git checkout $branchname }
 Set-Alias -Name gch -Value git_checkout
@@ -24,6 +29,9 @@ Set-Alias -Name gbv -Value git_branchv
 
 function git_push { git push }
 Set-Alias -Name gpu -Value git_push
+
+function git_pull { git pull }
+Set-Alias -Name gpl -Value git_pull
 
 function git_pushsetupstream([string]$branchname) 
 { git push --set-upstream origin $branchname }
