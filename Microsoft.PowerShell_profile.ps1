@@ -33,6 +33,9 @@ Set-Alias -Name gpu -Value git_push
 function git_pull { git pull }
 Set-Alias -Name gpl -Value git_pull
 
+function git_diff { git diff }
+Set-Alias -Name gdi -Value git_diff
+
 function git_pushsetupstream([string]$branchname) 
 { git push --set-upstream origin $branchname }
 Set-Alias -Name gpusu -Value git_pushsetupstream
