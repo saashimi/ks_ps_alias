@@ -1,5 +1,7 @@
 # Location is $PSHOME\Microsoft.PowerShell_profile.ps1
 
+# Import Posh Git module
+Import-Module posh-git
 
 # Directory Aliases
 function cd_repos { cd C:\Users\kev10076\Repos }
