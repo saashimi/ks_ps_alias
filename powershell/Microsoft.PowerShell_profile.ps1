@@ -15,7 +15,7 @@ Set-Alias -Name cdsrc -Value cd_source
 
 # Create Resources Symlink
 function make_symlink_toolbox {
-    Remove-Item 'C:\Program Files\ArcGIS\Pro\Resources\ArcToolBox' -Recurse
+    Remove-Item 'C:\Program Files\ArcGIS\Pro\Resources\ArcToolBox' -Recurse -Force
     New-Item -ItemType SymbolicLink -Path 'C:\Program Files\ArcGIS\Pro\Resources\ArcToolBox' -Target E:\git\ArcGISPro\Resources\ArcToolBox
 }
 Set-Alias -Name symtool -Value make_symlink_toolbox
