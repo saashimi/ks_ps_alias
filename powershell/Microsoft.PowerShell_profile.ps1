@@ -13,6 +13,12 @@ Set-Alias -Name cdpy -Value cd_qapyunit
 function cd_source { cd C:\Users\kev10076\source\repos }
 Set-Alias -Name cdsrc -Value cd_source
 
+# Create Resources Symlink
+function make_symlink_toolbox {
+    Remove-Item 'C:\Program Files\ArcGIS\Pro\Resources\ArcToolBox' -Recurse
+    New-Item -ItemType SymbolicLink -Path 'C:\Program Files\ArcGIS\Pro\Resources\ArcToolBox' -Target E:\git\ArcGISPro\Resources\ArcToolBox
+}
+Set-Alias -Name symtool -Value make_symlink_toolbox
 
 # Git Aliases
 function git_status { git status }
