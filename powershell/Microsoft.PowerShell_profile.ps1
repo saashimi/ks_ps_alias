@@ -15,10 +15,18 @@ Set-Alias -Name cdsrc -Value cd_source
 
 # Create Resources Symlink
 function make_symlink_toolbox {
+    Copy-Item 'C:\Program Files\ArcGIS\Pro\Resources\ArcToolBox' -Destination 'E:\git\Copied_TBX' -Recurse
     Remove-Item 'C:\Program Files\ArcGIS\Pro\Resources\ArcToolBox' -Recurse -Force
     New-Item -ItemType SymbolicLink -Path 'C:\Program Files\ArcGIS\Pro\Resources\ArcToolBox' -Target E:\git\ArcGISPro\Resources\ArcToolBox
 }
 Set-Alias -Name symtool -Value make_symlink_toolbox
+
+# Restore Toolbox
+function res_toolbox {
+    (Get-Item 'C:\Program Files\ArcGIS\Pro\Resources\ArcToolBox').Delete()
+    Copy-Item 'E:\git\Copied_TBX\ArcToolBox' -Destination 'C:\Program Files\ArcGIS\Pro\Resources' -Recurse -Force
+}
+Set-Alias -Name restool -Value res_toolbox 
 
 # Git Aliases
 function git_status { git status }
