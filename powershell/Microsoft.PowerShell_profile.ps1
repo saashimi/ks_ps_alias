@@ -13,6 +13,9 @@ Set-Alias -Name cdpy -Value cd_qapyunit
 function cd_source { cd C:\Users\kev10076\source\repos }
 Set-Alias -Name cdsrc -Value cd_source
 
+function cd_pro { cd E:\git\ArcGISPro }
+Set-Alias -Name cdpro -Value cd_pro
+
 # Create Resources Symlink
 function make_symlink_toolbox {
     Copy-Item 'C:\Program Files\ArcGIS\Pro\Resources\ArcToolBox' -Destination 'E:\git\Copied_TBX' -Recurse
@@ -25,6 +28,7 @@ Set-Alias -Name symtool -Value make_symlink_toolbox
 function res_toolbox {
     (Get-Item 'C:\Program Files\ArcGIS\Pro\Resources\ArcToolBox').Delete()
     Copy-Item 'E:\git\Copied_TBX\ArcToolBox' -Destination 'C:\Program Files\ArcGIS\Pro\Resources' -Recurse -Force
+    Remove-Item 'E:\git\Copied_TBX\ArcToolBox' -Recurse -Force
 }
 Set-Alias -Name restool -Value res_toolbox 
 
